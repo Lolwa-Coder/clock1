@@ -1,0 +1,118 @@
+*{
+  margin:0;
+  background:#fffafa;
+  box-sizing:border-box;
+  
+}
+body{
+  overflow:hidden;
+}
+#clock{
+  --rotation: 0;
+  border-radius:50%;
+  border: 2vw solid black;
+  height:40vw;
+  width:40%;
+ 
+ background: rgb(155,14,210);
+background: radial-gradient(circle, rgba(155,14,100,1) 0%, rgba(207,5,151,1) 45%, rgba(249,119,167,1) 100%);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  transition-duration:1s;
+   transform-origin: center;
+}
+#clock:before{
+  content:'';
+  padding:22vw;
+  position:absolute;
+  align:center;
+  top:-8vw;
+  left:-8vw;
+  
+  border-radius:50%;
+  
+  border: 4vw solid black;
+}
+
+#tick{
+ 
+  position:absolute;
+  top:50%;
+  left:50%;
+  height:1%;
+  width:30%;
+  background:black;
+  transform-origin:left center;
+  transition: transform 1s linear;
+  transform-style: preserve-3D;
+  z-index:1;
+  transform:translateX(-50%);
+   transform:rotate(calc(var(--rotation) * 01deg));
+}
+#tick2{
+ 
+  position:absolute;
+  top:50%;
+  left:50%;
+  height:2%;
+  width:20%;
+  background:black;
+  
+  z-index:2;
+  transform-origin:left center;
+   transform:translateX(-50%);
+   transform:rotate(calc(var(--rotation) * 1deg));
+}
+#tick3{
+   
+  position:absolute;
+  top:50%;
+  left:50%;
+  height:0.5%;
+  width:40%;
+  background:lime;
+  
+  
+  z-index:3;
+  transform-origin:left center;
+   transform:translateX(-50%);
+  transform:rotate(calc(var(--rotation) * 1deg));
+}
+
+#cdot{
+  background:black;
+  height:3vw;
+  width:3vw;
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:10;
+  
+}
+#clock:after{
+  content:"you could have seen the time in taskbar, smh";
+  position:absolute;
+  color:purple;
+  right:-28vw;
+  top:-3vw;
+  width:19vw;
+  wrap-content:wrap;
+  font-size:5vw;
+}
+
+@media screen and (max-width : 436px){
+  #clock:after{
+    font-size:10vw;
+    top:-50vw;
+    right:-32vw;
+    wrap-content:wrap;
+    text-align:center;
+    height:19vh;
+    width:100vw;
+    
+  }
+}
